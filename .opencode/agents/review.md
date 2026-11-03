@@ -1,6 +1,7 @@
 ---
 description: Reviews code for correctness, regressions, and maintainability
 mode: primary
+steps: 2
 permissions:
   - action: "*"
     resource: "*"

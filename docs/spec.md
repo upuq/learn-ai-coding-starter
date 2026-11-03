@@ -47,7 +47,7 @@ Prints `small slop` twice, then `big slop`.
 | `vibe`        | `if`         | Conditional                                             |
 | `nah`         | `else`       | Else branch                                             |
 | `ralph`       | `while`      | Loop while a condition is `✅`                          |
-| `hallucinate` | `print`      | Print one value, then a newline                         |
+| `hallucinate` | `print`      | Print values separated by spaces, then a newline        |
 | `ship`        | `return`     | Return one value from a function                        |
 | `✨`          | `;`          | Statement terminator (required)                         |
 | `—`           | `//`         | Start a line comment                                    |
@@ -129,10 +129,12 @@ Call depth is capped at 500 nested calls. Exceeding it is a runtime error (`stac
 
 ## Built-Ins
 
-`hallucinate(value)` is the only built-in. It accepts exactly one argument, prints it followed by a newline, and returns `nil`. Numbers print as base-10 digits, strings without quotes, booleans as `✅`/`❌`, nil as `nil`, and functions as `<clanker name>`.
+`hallucinate(values...)` is the only built-in. It accepts any number of arguments, prints them separated by spaces followed by a newline, and returns `nil`. With no arguments it prints a blank line. Numbers print as base-10 digits, strings without quotes, booleans as `✅`/`❌`, nil as `nil`, and functions as `<clanker name>`.
 
 ```slop
-hallucinate(3)✨   — 3
+hallucinate(3)✨              — 3
+hallucinate(3, “things”)✨    — 3 things
+hallucinate()✨               — (blank line)
 ```
 
 ## Operators
