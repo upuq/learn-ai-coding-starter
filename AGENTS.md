@@ -22,6 +22,18 @@ uv run ruff check
 uv run ty check
 ```
 
+After any code change, run the formatter before the checks above:
+
+```bash
+uv run ruff format
+```
+
+For comparison tests, run just that file:
+
+```bash
+uv run pytest tests/test_comparisons.py
+```
+
 ## Regression tests
 
 Add a regression test when you:
