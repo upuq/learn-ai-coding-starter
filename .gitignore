@@ -4,4 +4,5 @@
 __pycache__/
 node_modules/
 logs/
+.playwright-mcp/
 .out

@@ -42,5 +42,43 @@
       "resource": "create-test-program",
       "effect": "ask"
     }
-  ]
+  ],
+  "mcp": {
+    "servers": {
+      "context7": {
+        "type": "remote",
+        "url": "https://mcp.context7.com/mcp"
+      },
+      "notion": {
+        "type": "remote",
+        "url": "https://mcp.notion.com/mcp",
+        "disabled": true
+      },
+      "playwright": {
+        "type": "local",
+        "command": [
+          "bunx",
+          "--bun",
+          "@playwright/mcp@0.0.80",
+          "--isolated",
+          "--browser",
+          "chromium",
+          "--caps=vision"
+        ],
+        "disabled": true
+      },
+      "chrome-devtools": {
+        "type": "local",
+        "command": [
+          "bunx",
+          "--bun",
+          "chrome-devtools-mcp@latest",
+          "--isolated",
+          "--headless",
+          "--executablePath",
+          "/home/phil/.cache/chrome/chrome/linux-157.0.8103.50/chrome-linux64/chrome"
+        ]
+      }
+    }
+  }
 }
